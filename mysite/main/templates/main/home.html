@@ -1,3 +1,5 @@
+{% extends 'main/navbar.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +14,15 @@
 </head>
 
 <body>
-    <img src="{% static '1.jpg' %}" alt="My image"> {%for tut in tutorials%}
-    <p>{{tut}}</p>
-    <br> {{tut.tutorial_content|safe}} {% endfor%}
+
+    {% block content %} 
+        {%for tut in tutorials%}
+            <p>{{tut}}</p>
+            <br> {{tut.tutorial_content|safe}}
+        {% endfor%}
+
+    {% endblock %}
+
     <script src="{% static 'tinymce/css/prism.js' %}"></script>
 
 </body>
