@@ -1,1 +1,15 @@
-{% extends 'main/navbar.html' %}
+{% extends 'main/base.html' %} {% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <table class="table table-borderless">
+
+        <tbody>
+            {{form.as_table}}
+        </tbody>
+    </table>
+
+    <button type="submit">login</button>
+</form>
+
+new here <a href="/register" target="blank"><strong>register </strong></a>. {% endblock %}

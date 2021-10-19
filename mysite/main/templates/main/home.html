@@ -1,4 +1,4 @@
-{% extends 'main/navbar.html' %}
+{% extends 'main/base.html' %}
 
 
 <head>
@@ -7,13 +7,9 @@
 
 <body>
 
-    {% block content %} 
-        {%for tut in tutorials%}
-            <p>{{tut}}</p>
-            <br> {{tut.tutorial_content|safe}}
-        {% endfor%}
-
-    {% endblock %}
-{% load static %}    <script src="{% static 'tinymce/css/prism.js' %}"></script>
+    {% block content %} {%for tut in tutorials%}
+    <p>{{tut}}</p>
+    <br> {{tut.tutorial_content|safe}} {% endfor%} {% endblock %} {% load static %}
+    <script src="{% static 'tinymce/css/prism.js' %}"></script>
 
 </body>
